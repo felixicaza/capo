@@ -11,16 +11,15 @@
     "order",
     "optimization"
   ],
-  "homepage": "https://github.com/natemoo-re/astro-capo#readme",
+  "homepage": "https://github.com/felixicaza/astro-capo",
   "bugs": {
-    "url": "https://github.com/natemoo-re/astro-capo/issues"
+    "url": "https://github.com/felixicaza/astro-capo/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/natemoo-re/astro-capo"
+    "url": "git+https://github.com/felixicaza/astro-capo.git"
   },
   "license": "MIT",
-  "author": "Nate Moore",
   "type": "module",
   "exports": "./src/index.ts",
   "files": [
@@ -60,5 +59,13 @@
   },
   "peerDependencies": {
     "astro": ">=2.8"
-  }
+  },
+  "authors": [
+    {
+      "name": "Felix Icaza"
+    },
+    {
+      "name": "Nate Moore"
+    }
+  ]
 }
