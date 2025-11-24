@@ -30,7 +30,7 @@
     "lint:fix": "eslint --cache --fix .",
     "prepare": "simple-git-hooks",
     "test": "vitest",
-    "test:base": "pnpm -r build"
+    "test:fixtures": "pnpm -r build"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm nano-staged"
