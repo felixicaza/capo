@@ -1,11 +1,13 @@
-# Capo.js for Astro
+# 🔢 Capo.js for Astro
 
 Forked from [natemoo-re/astro-capo](https://github.com/natemoo-re/astro-capo/).
 
-#### Changes made in this fork:
+###### Changes made in this fork:
 - Changed package name to `@felixicaza/astro-capo` to publish under my npm scope.
 - Update order of `preload` tags to be higher priority and avoid CLS issues (see [why](#-why)).
 - Added tests.
+
+---
 
 Get your `<head>` in order—automatically!
 
@@ -13,7 +15,7 @@ Get your `<head>` in order—automatically!
 
 Unlike [`capo.js`](https://rviscomi.github.io/capo.js/), which makes it easy to debug the optimal order of your `<head>` in the browser, `@felixicaza/astro-capo` automatically optimizes your `<head>` on the server while rendering your page.
 
-⬇️ Installation
+## ⬇️ Installation
 
 NPM:
 
