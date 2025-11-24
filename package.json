@@ -22,9 +22,8 @@
   "license": "MIT",
   "author": "Nate Moore",
   "type": "module",
-  "exports": "./index.ts",
+  "exports": "./src/index.ts",
   "files": [
-    "index.ts",
     "src"
   ],
   "scripts": {

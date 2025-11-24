@@ -5,7 +5,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@Head": ["../../../index.ts"]
+      "@Head": ["../../../src/index.ts"]
     }
   }
 }
