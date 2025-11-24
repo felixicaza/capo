@@ -4,7 +4,7 @@ Forked from [natemoo-re/astro-capo](https://github.com/natemoo-re/astro-capo/).
 
 #### Changes made in this fork:
 - Changed package name to `@felixicaza/astro-capo` to publish under my npm scope.
-- Update order of `preload` tags to be higher priority and avoid CLS issues (see [why](#why)).
+- Update order of `preload` tags to be higher priority and avoid CLS issues (see [why](#-why)).
 - Added tests.
 
 Get your `<head>` in order—automatically!
@@ -58,7 +58,7 @@ import { Head } from '@felixicaza/astro-capo'
 
 ## 💡 Why?
 
-The previous order placed the `preload` tags very low, which caused some resources to be preloaded too late, for example, when there were `@font-face` declarations in inline `style` tags, resulting in Cumulative Layout Shift (CLS) issues. (See test [ada71429](https://github.com/felixicaza/astro-capo/blob/ada71429a83d5d128d463196eb7d2047b2ed67af/tests/fixtures/base/dist/index.html)).
+The previous order placed the `preload` tags very low, which caused some resources to be preloaded too late, for example, when there were `@font-face` declarations in inline `style` tags, resulting in Cumulative Layout Shift (CLS) issues. (See test [ada71429](https://github.com/felixicaza/astro-capo/blob/ada71429a83d5d128d463196eb7d2047b2ed67af/tests/fixtures/base/dist/index.html) and [#113](https://github.com/rviscomi/capo.js/issues/113)).
 
 ## 📄 License
 
