@@ -1,5 +1,5 @@
 {
-  "name": "astro-capo",
+  "name": "@felixicaza/astro-capo",
   "version": "0.0.1",
   "description": "Automatically sort your head with capo.js in Astro",
   "keywords": [
