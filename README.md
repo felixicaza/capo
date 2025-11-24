@@ -58,7 +58,7 @@ import { Head } from '@felixicaza/astro-capo'
 
 ## 💡 Why?
 
-The previous order placed the `preload` tags very low in the order, which caused some resources to be preloaded too late, for example, when there were `@font-face` declarations in inline `style` tags, resulting in Cumulative Layout Shift (CLS) issues.
+The previous order placed the `preload` tags very low, which caused some resources to be preloaded too late, for example, when there were `@font-face` declarations in inline `style` tags, resulting in Cumulative Layout Shift (CLS) issues. (See test [ada71429](https://github.com/felixicaza/astro-capo/blob/ada71429a83d5d128d463196eb7d2047b2ed67af/tests/fixtures/base/dist/index.html)).
 
 ## 📄 License
 
