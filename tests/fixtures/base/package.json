@@ -1,0 +1,17 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "private": true,
+  "description": "@felixicaza/astro-capo base test",
+  "author": "Felix Icaza",
+  "type": "module",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "5.16.0"
+  }
+}

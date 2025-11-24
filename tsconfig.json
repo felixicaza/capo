@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "types": ["vitest/config"],
     "allowArbitraryExtensions": true,
     "allowImportingTsExtensions": true,
     "jsx": "preserve"

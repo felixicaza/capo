@@ -91,7 +91,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
@@ -133,3 +132,6 @@ dist
 
 # pnpm lockfile
 pnpm-lock.yaml
+
+# Astro types
+.astro

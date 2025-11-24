@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Capo ordering > complex head ordering tokens 1`] = `
+[
+  "meta[name=viewport]",
+  "meta[charset]",
+  "base[href]",
+  "title",
+  "link[rel=preconnect]",
+  "script[async]",
+  "style",
+  "script",
+  "link[rel=stylesheet]",
+  "link[rel=preload;as=font]",
+  "script[type=module]",
+  "script[defer]",
+  "link[rel=prefetch]",
+]
+`;
+
+exports[`Capo ordering > ordered head 1`] = `
+"
+      <html><head><meta charset="utf-8"><base href="https://example.com/"><title>A</title><script src="/a.js" async=""></script><style>div{display:flex;}</style><meta name="description" content="A"></head><body><div id="x"></div></body></html>
+    "
+`;
+
+exports[`Capo ordering > preserves outside head content 1`] = `"<html><head><title>A</title></head><body><div id="outer"></div></body></html>"`;

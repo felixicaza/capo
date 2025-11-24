@@ -1,0 +1,138 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Basic individual element classification tests > async script 1`] = `"ASYNC_SCRIPT"`;
+
+exports[`Basic individual element classification tests > base 1`] = `"META"`;
+
+exports[`Basic individual element classification tests > content security policy 1`] = `"META"`;
+
+exports[`Basic individual element classification tests > defer script 1`] = `"DEFER_SCRIPT"`;
+
+exports[`Basic individual element classification tests > favicon 1`] = `"OTHER"`;
+
+exports[`Basic individual element classification tests > inline script 1`] = `"SYNC_SCRIPT"`;
+
+exports[`Basic individual element classification tests > inline styles 1`] = `"SYNC_STYLES"`;
+
+exports[`Basic individual element classification tests > meta charset 1`] = `"META"`;
+
+exports[`Basic individual element classification tests > meta viewport 1`] = `"META"`;
+
+exports[`Basic individual element classification tests > open graph 1`] = `"OTHER"`;
+
+exports[`Basic individual element classification tests > preconnect 1`] = `"PRECONNECT"`;
+
+exports[`Basic individual element classification tests > prefetch 1`] = `"PREFETCH_PRERENDER"`;
+
+exports[`Basic individual element classification tests > preload 1`] = `"PRELOAD"`;
+
+exports[`Basic individual element classification tests > rich snippet json 1`] = `"OTHER"`;
+
+exports[`Basic individual element classification tests > script 1`] = `"SYNC_SCRIPT"`;
+
+exports[`Basic individual element classification tests > script module 1`] = `"DEFER_SCRIPT"`;
+
+exports[`Basic individual element classification tests > style @import 1`] = `"IMPORT_STYLES"`;
+
+exports[`Basic individual element classification tests > stylesheet 1`] = `"SYNC_STYLES"`;
+
+exports[`Basic individual element classification tests > title 1`] = `"TITLE"`;
+
+exports[`Bulk classification > list of elements and their weights 1`] = `
+[
+  {
+    "element": "<meta charset="utf-8">",
+    "weight": "META",
+  },
+  {
+    "element": "<meta name="viewport">",
+    "weight": "META",
+  },
+  {
+    "element": "<base href="/">",
+    "weight": "META",
+  },
+  {
+    "element": "<title>X</title>",
+    "weight": "TITLE",
+  },
+  {
+    "element": "<link rel="preconnect" href="https://x">",
+    "weight": "PRECONNECT",
+  },
+  {
+    "element": "<link rel="stylesheet" href="a.css">",
+    "weight": "SYNC_STYLES",
+  },
+  {
+    "element": "<link rel="modulepreload" href="/m.js">",
+    "weight": "PRELOAD",
+  },
+  {
+    "element": "<link rel="preload" href="/font.woff2" as="font">",
+    "weight": "PRELOAD",
+  },
+  {
+    "element": "<link rel="prefetch" href="/x.js">",
+    "weight": "PREFETCH_PRERENDER",
+  },
+  {
+    "element": "<style>@import url(a.css);</style>",
+    "weight": "IMPORT_STYLES",
+  },
+  {
+    "element": "<style>body{}</style>",
+    "weight": "SYNC_STYLES",
+  },
+  {
+    "element": "<script src="/a.js" async></script>",
+    "weight": "ASYNC_SCRIPT",
+  },
+  {
+    "element": "<script src="/a.js" defer></script>",
+    "weight": "DEFER_SCRIPT",
+  },
+  {
+    "element": "<script src="/a.js"></script>",
+    "weight": "SYNC_SCRIPT",
+  },
+  {
+    "element": "<script src="/a.js" type="module"></script>",
+    "weight": "DEFER_SCRIPT",
+  },
+  {
+    "element": "<script type="application/json">{"a":1}</script>",
+    "weight": "OTHER",
+  },
+  {
+    "element": "<script>console.log(1)</script>",
+    "weight": "SYNC_SCRIPT",
+  },
+  {
+    "element": "<script src="/legacy.js" nomodule></script>",
+    "weight": "SYNC_SCRIPT",
+  },
+  {
+    "element": "<link rel="icon" href="/favicon.ico">",
+    "weight": "OTHER",
+  },
+]
+`;
+
+exports[`Element classification - additional cases > async + defer 1`] = `"DEFER_SCRIPT"`;
+
+exports[`Element classification - additional cases > modulepreload 1`] = `"PRELOAD"`;
+
+exports[`Element classification - additional cases > preconnect crossorigin 1`] = `"PRECONNECT"`;
+
+exports[`Element classification - additional cases > preload font 1`] = `"PRELOAD"`;
+
+exports[`Element classification - additional cases > prerender 1`] = `"PREFETCH_PRERENDER"`;
+
+exports[`Element classification - additional cases > script application/json 1`] = `"OTHER"`;
+
+exports[`Element classification - additional cases > script importmap 1`] = `"SYNC_SCRIPT"`;
+
+exports[`Element classification - additional cases > script nomodule 1`] = `"SYNC_SCRIPT"`;
+
+exports[`Element classification - additional cases > script speculation rules 1`] = `"SYNC_SCRIPT"`;
