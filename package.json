@@ -2,6 +2,15 @@
   "name": "astro-capo",
   "version": "0.0.1",
   "description": "Automatically sort your head with capo.js in Astro",
+  "keywords": [
+    "astro",
+    "astro-component",
+    "performance",
+    "capo.js",
+    "head",
+    "order",
+    "optimization"
+  ],
   "homepage": "https://github.com/natemoo-re/astro-capo#readme",
   "bugs": {
     "url": "https://github.com/natemoo-re/astro-capo/issues"
@@ -10,6 +19,10 @@
     "type": "git",
     "url": "https://github.com/natemoo-re/astro-capo"
   },
+  "license": "MIT",
+  "author": "Nate Moore",
+  "type": "module",
+  "exports": "./index.ts",
   "files": [
     "index.ts",
     "src"
@@ -25,18 +38,6 @@
   "nano-staged": {
     "*": "pnpm lint:fix"
   },
-  "exports": "./index.ts",
-  "keywords": [
-    "astro",
-    "astro-component",
-    "performance",
-    "capo.js",
-    "head",
-    "order",
-    "optimization"
-  ],
-  "author": "Nate Moore",
-  "license": "MIT",
   "dependencies": {
     "ultrahtml": "1.6.0"
   },

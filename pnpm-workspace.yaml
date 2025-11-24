@@ -1,5 +1,5 @@
 onlyBuiltDependencies:
-  - esbuild
-  - sharp
-  - simple-git-hooks
-  - unrs-resolver
+   - esbuild
+   - sharp
+   - simple-git-hooks
+   - unrs-resolver

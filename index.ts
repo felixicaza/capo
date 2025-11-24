@@ -1,1 +1,1 @@
-export { Head } from './src/Head.ts';
+export { Head } from './src/Head.ts'
