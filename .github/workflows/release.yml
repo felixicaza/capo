@@ -27,12 +27,23 @@ jobs:
 
          - uses: pnpm/action-setup@v4
 
-         - run: pnpx changelogithub
+         - name: Generate release changelog
+           run: pnpx changelogithub
            env:
               GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-         - run: pnpm install --no-frozen-lockfile
+         - name: Install dependencies
+           run: pnpm install --no-frozen-lockfile
 
-         - run: pnpm publish --access public --no-git-checks
+         - name: Publish to npm
+           run: |
+              TAG="${GITHUB_REF_NAME}"
+              if [[ "$TAG" == *"beta"* ]]; then
+                 echo "Publishing beta version"
+                 pnpm publish --tag beta --access public --no-git-checks
+              else
+                 echo "Publishing stable version"
+                 pnpm publish --access public --no-git-checks
+              fi
            env:
               NPM_CONFIG_PROVENANCE: true
