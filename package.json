@@ -39,6 +39,7 @@
     "lint": "eslint --cache .",
     "lint:fix": "eslint --cache --fix .",
     "prepare": "simple-git-hooks",
+    "prepublishOnly": "pnpm build",
     "release": "bumpp",
     "test": "vitest",
     "test:fixtures": "pnpm -r build"

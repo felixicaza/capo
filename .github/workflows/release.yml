@@ -22,21 +22,19 @@ jobs:
               node-version: lts/*
               registry-url: https://registry.npmjs.org/
 
-         - name: Update npm
-           run: npm install -g npm@latest
+         - run: npm install -g npm@latest
 
-         - uses: pnpm/action-setup@v4
+         - uses: pnpm/action-setup@v6
+           with:
+              version: latest
 
-         - name: Generate release changelog
-           run: pnpx changelogithub
+         - run: pnpx changelogithub
            env:
               GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-         - name: Install dependencies
-           run: pnpm install --no-frozen-lockfile
+         - run: pnpm install --no-frozen-lockfile
 
-         - name: Publish to npm
-           run: |
+         - run: |
               TAG="${GITHUB_REF_NAME}"
               if [[ "$TAG" == *"beta"* ]]; then
                  echo "Publishing beta version"
