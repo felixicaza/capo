@@ -1,8 +1,16 @@
 packages:
    - tests/fixtures/*
 
+allowBuilds:
+   esbuild: true
+   sharp: true
+   simple-git-hooks: true
+
 onlyBuiltDependencies:
    - esbuild
    - sharp
    - simple-git-hooks
    - unrs-resolver
+
+trustPolicyExclude:
+   - "semver@6.3.1"
