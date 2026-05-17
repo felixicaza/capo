@@ -74,7 +74,7 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "astro": ">=2.8"
+    "astro": ">=3.6"
   },
   "author": "Felix Icaza <fx.joliett17@gmail.com>"
 }
