@@ -21,11 +21,21 @@
   },
   "license": "MIT",
   "type": "module",
-  "exports": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
     "lint": "eslint --cache .",
     "lint:fix": "eslint --cache --fix .",
     "prepare": "simple-git-hooks",
@@ -44,6 +54,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.39.1",
+    "@felixicaza/tsdown-config": "0.1.1",
     "@typescript-eslint/parser": "8.59.3",
     "astro": "6.3.3",
     "bumpp": "11.1.0",
@@ -57,6 +68,7 @@
     "nano-staged": "1.0.2",
     "neostandard": "0.13.0",
     "simple-git-hooks": "2.13.1",
+    "tsdown": "0.22.0",
     "vitest": "4.1.6"
   },
   "sideEffects": false,
