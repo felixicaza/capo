@@ -44,31 +44,24 @@
   },
   "devDependencies": {
     "@eslint/js": "9.39.1",
-    "@typescript-eslint/parser": "8.47.0",
-    "astro": "5.16.0",
-    "bumpp": "10.3.1",
+    "@typescript-eslint/parser": "8.59.3",
+    "astro": "6.3.3",
+    "bumpp": "11.1.0",
     "eslint": "9.39.1",
-    "eslint-plugin-astro": "1.5.0",
-    "eslint-plugin-jsonc": "2.21.0",
-    "eslint-plugin-package-json": "0.85.0",
-    "eslint-plugin-yml": "1.19.0",
-    "globals": "16.5.0",
-    "jiti": "2.6.1",
-    "nano-staged": "0.9.0",
-    "neostandard": "0.12.2",
+    "eslint-plugin-astro": "1.7.0",
+    "eslint-plugin-jsonc": "3.1.2",
+    "eslint-plugin-package-json": "0.91.2",
+    "eslint-plugin-yml": "3.3.2",
+    "globals": "17.6.0",
+    "jiti": "2.7.0",
+    "nano-staged": "1.0.2",
+    "neostandard": "0.13.0",
     "simple-git-hooks": "2.13.1",
-    "vitest": "4.0.13"
+    "vitest": "4.1.6"
   },
+  "sideEffects": false,
   "peerDependencies": {
     "astro": ">=2.8"
   },
-  "packageManager": "pnpm@10.23.0",
-  "authors": [
-    {
-      "name": "Felix Icaza"
-    },
-    {
-      "name": "Nate Moore"
-    }
-  ]
+  "author": "Felix Icaza <fx.joliett17@gmail.com>"
 }
