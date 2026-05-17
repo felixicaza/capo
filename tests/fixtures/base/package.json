@@ -12,6 +12,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@felixicaza/astro-capo": "workspace:*",
     "astro": "6.3.3"
   }
 }
