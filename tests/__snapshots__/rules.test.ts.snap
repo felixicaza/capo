@@ -27,6 +27,16 @@ exports[`groups tags detection > detects async script tags from rules 1`] = `
       "tagWeight": 0,
     },
   },
+  "asyncTypeModule": {
+    "classification": 1,
+    "isAsyncScriptTag": true,
+    "miscClassification": {
+      "groupId": "ASYNC_SCRIPT",
+      "groupWeight": 7,
+      "score": 701,
+      "tagWeight": 1,
+    },
+  },
 }
 `;
 
@@ -113,16 +123,6 @@ exports[`groups tags detection > detects execution tags from rules 1`] = `
     },
   },
   "scriptBlockingDefer": {
-    "classification": 4,
-    "isExecutionTag": true,
-    "miscClassification": {
-      "groupId": "EXECUTION",
-      "groupWeight": 4,
-      "score": 404,
-      "tagWeight": 4,
-    },
-  },
-  "scriptBlockingModule": {
     "classification": 3,
     "isExecutionTag": true,
     "miscClassification": {
@@ -130,6 +130,16 @@ exports[`groups tags detection > detects execution tags from rules 1`] = `
       "groupWeight": 4,
       "score": 403,
       "tagWeight": 3,
+    },
+  },
+  "scriptBlockingModule": {
+    "classification": 4,
+    "isExecutionTag": true,
+    "miscClassification": {
+      "groupId": "EXECUTION",
+      "groupWeight": 4,
+      "score": 404,
+      "tagWeight": 4,
     },
   },
   "scriptInline": {

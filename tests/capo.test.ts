@@ -51,6 +51,7 @@ describe('Capo ordering', () => {
       '<base href="https://example.com/">',
       '<link rel="preconnect" href="https://cdn.example.com">',
       '<meta property="og:title" content="a">',
+      '<script src="/test.js" type="module" async></script>',
       '</head><body></body></html>'
     ].join('')
 

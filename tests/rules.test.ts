@@ -110,6 +110,11 @@ describe('groups tags detection', () => {
 
   test('detects async script tags from rules', () => {
     const result = {
+      asyncTypeModule: {
+        isAsyncScriptTag: isAsyncScriptTags('script', { src: '/a.js', type: 'module', async: '' }),
+        classification: classifyAsyncScriptTags('script', { src: '/a.js', type: 'module', async: '' }),
+        miscClassification: classifyMiscTags(parseElement('<script src="/a.js" type="module" async></script>'))
+      },
       asyncScript: {
         isAsyncScriptTag: isAsyncScriptTags('script', { src: '/a.js', async: '' }),
         classification: classifyAsyncScriptTags('script', { src: '/a.js', async: '' }),

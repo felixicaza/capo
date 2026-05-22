@@ -5,8 +5,8 @@ import { attrLower, hasBlockingRender, hasSrc, isBooleanAttrPresent } from '../h
 const ExecutionWeight = {
   BLOCKING_RENDER: 6,
   BLOCKING_RENDER_ASYNC: 5,
-  BLOCKING_RENDER_DEFER: 4,
-  BLOCKING_RENDER_MODULE: 3,
+  BLOCKING_RENDER_MODULE: 4,
+  BLOCKING_RENDER_DEFER: 3,
   BLOCKING_RENDER_ATTR: 2,
   SYNC_MODULE: 1,
   NOMODULE: 0
