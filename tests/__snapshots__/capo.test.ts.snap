@@ -1,27 +1,67 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Capo ordering > complex head ordering tokens 1`] = `
-[
-  "meta[name=viewport]",
-  "meta[charset]",
-  "base[href]",
-  "title",
-  "link[rel=preconnect]",
-  "link[rel=preload;as=font]",
-  "script[async]",
-  "style",
-  "script",
-  "link[rel=stylesheet]",
-  "script[type=module]",
-  "script[defer]",
-  "link[rel=prefetch]",
-]
+exports[`Capo ordering > orders mixed head according to rules groups and tags weights 1`] = `
+{
+  "output": "<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><base href="https://example.com/"><meta name="referrer" content="no-referrer"><title>Site</title><link rel="preconnect" href="https://cdn.example.com"><link rel="dns-prefetch" href="//cdn.example.com"><link rel="preload" href="/font.woff2" as="font"><link rel="modulepreload" href="/m.js"><script src="/async.js" async=""></script><style>@import url("/a.css");</style><script type="importmap">{"imports":{}}</script><script src="/sync.js" blocking="render"></script><style>body{}</style><link rel="stylesheet" href="/style.css"><script src="/module.js" type="module"></script><script src="/defer.js" defer=""></script><link rel="prefetch" href="/x.js"><script type="speculationrules">{"prefetch":[{"urls":["a.html"]}]}</script><meta name="description" content="A"><meta property="og:image" content="image.png"><link rel="icon" type="image/x-icon" href="/images/favicon.ico"><meta property="og:title" content="a"></head><body></body></html>",
+  "sequence": [
+    "meta[charset=utf-8]",
+    "meta[name=viewport]",
+    "base[href=https://example.com/]",
+    "meta[name=referrer]",
+    "title",
+    "link[rel=preconnect;href=https://cdn.example.com]",
+    "link[rel=dns-prefetch;href=//cdn.example.com]",
+    "link[rel=preload;href=/font.woff2;as=font]",
+    "link[rel=modulepreload;href=/m.js]",
+    "script[src=/async.js;async]",
+    "style",
+    "script[type=importmap]",
+    "script[src=/sync.js;blocking=render]",
+    "style",
+    "link[rel=stylesheet;href=/style.css]",
+    "script[type=module;src=/module.js]",
+    "script[src=/defer.js;defer]",
+    "link[rel=prefetch;href=/x.js]",
+    "script[type=speculationrules]",
+    "meta[name=description]",
+    "meta[property=og:image]",
+    "link[rel=icon;href=/images/favicon.ico]",
+    "meta[property=og:title]",
+  ],
+}
 `;
 
-exports[`Capo ordering > ordered head 1`] = `
-"
-      <html><head><meta charset="utf-8"><base href="https://example.com/"><title>A</title><script src="/a.js" async=""></script><style>div{display:flex;}</style><meta name="description" content="A"></head><body><div id="x"></div></body></html>
-    "
+exports[`Capo ordering > orders sync scripts by tags weight including blocking and nomodule 1`] = `
+{
+  "output": "<html><head><script src="/a.js" blocking="render" async=""></script><script src="/a.js" blocking="render" defer=""></script><script src="/a.js" blocking="render" type="module"></script><script src="/a.js" blocking="render"></script><script src="/a.js"></script><script src="/legacy.js" nomodule=""></script></head><body></body></html>",
+  "sequence": [
+    "script[src=/a.js;blocking=render;async]",
+    "script[src=/a.js;blocking=render;defer]",
+    "script[type=module;src=/a.js;blocking=render]",
+    "script[src=/a.js;blocking=render]",
+    "script[src=/a.js]",
+    "script[src=/legacy.js;nomodule]",
+  ],
+}
 `;
 
-exports[`Capo ordering > preserves outside head content 1`] = `"<html><head><title>A</title></head><body><div id="outer"></div></body></html>"`;
+exports[`Capo ordering > preserves non-element nodes inside head while sorting elements 1`] = `
+{
+  "hasMarkerComment": true,
+  "output": "<html><head><!-- marker -->
+<meta charset="utf-8">
+<title>A</title>
+</head><body></body></html>",
+  "sequence": [
+    "meta[charset=utf-8]",
+    "title",
+  ],
+}
+`;
+
+exports[`Capo ordering > preserves outside head content 1`] = `
+{
+  "hasOuterDiv": true,
+  "output": "<html><head><title>A</title></head><body><div id="outer"></div></body></html>",
+}
+`;

@@ -1,138 +1,462 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Basic individual element classification tests > async script 1`] = `"ASYNC_SCRIPT"`;
-
-exports[`Basic individual element classification tests > base 1`] = `"META"`;
-
-exports[`Basic individual element classification tests > content security policy 1`] = `"META"`;
-
-exports[`Basic individual element classification tests > defer script 1`] = `"DEFER_SCRIPT"`;
-
-exports[`Basic individual element classification tests > favicon 1`] = `"OTHER"`;
-
-exports[`Basic individual element classification tests > inline script 1`] = `"SYNC_SCRIPT"`;
-
-exports[`Basic individual element classification tests > inline styles 1`] = `"SYNC_STYLES"`;
-
-exports[`Basic individual element classification tests > meta charset 1`] = `"META"`;
-
-exports[`Basic individual element classification tests > meta viewport 1`] = `"META"`;
-
-exports[`Basic individual element classification tests > open graph 1`] = `"OTHER"`;
-
-exports[`Basic individual element classification tests > preconnect 1`] = `"PRECONNECT"`;
-
-exports[`Basic individual element classification tests > prefetch 1`] = `"PREFETCH_PRERENDER"`;
-
-exports[`Basic individual element classification tests > preload 1`] = `"PRELOAD"`;
-
-exports[`Basic individual element classification tests > rich snippet json 1`] = `"OTHER"`;
-
-exports[`Basic individual element classification tests > script 1`] = `"SYNC_SCRIPT"`;
-
-exports[`Basic individual element classification tests > script module 1`] = `"DEFER_SCRIPT"`;
-
-exports[`Basic individual element classification tests > style @import 1`] = `"IMPORT_STYLES"`;
-
-exports[`Basic individual element classification tests > stylesheet 1`] = `"SYNC_STYLES"`;
-
-exports[`Basic individual element classification tests > title 1`] = `"TITLE"`;
-
-exports[`Bulk classification > list of elements and their weights 1`] = `
-[
-  {
-    "element": "<meta charset="utf-8">",
-    "weight": "META",
+exports[`groups tags detection > detect identity tag from rules 1`] = `
+{
+  "title": {
+    "classification": 0,
+    "isIdentityTag": true,
+    "miscClassification": {
+      "groupId": "IDENTITY",
+      "groupWeight": 10,
+      "score": 1000,
+      "tagWeight": 0,
+    },
   },
-  {
-    "element": "<meta name="viewport">",
-    "weight": "META",
-  },
-  {
-    "element": "<base href="/">",
-    "weight": "META",
-  },
-  {
-    "element": "<title>X</title>",
-    "weight": "TITLE",
-  },
-  {
-    "element": "<link rel="preconnect" href="https://x">",
-    "weight": "PRECONNECT",
-  },
-  {
-    "element": "<link rel="stylesheet" href="a.css">",
-    "weight": "SYNC_STYLES",
-  },
-  {
-    "element": "<link rel="modulepreload" href="/m.js">",
-    "weight": "PRELOAD",
-  },
-  {
-    "element": "<link rel="preload" href="/font.woff2" as="font">",
-    "weight": "PRELOAD",
-  },
-  {
-    "element": "<link rel="prefetch" href="/x.js">",
-    "weight": "PREFETCH_PRERENDER",
-  },
-  {
-    "element": "<style>@import url(a.css);</style>",
-    "weight": "IMPORT_STYLES",
-  },
-  {
-    "element": "<style>body{}</style>",
-    "weight": "SYNC_STYLES",
-  },
-  {
-    "element": "<script src="/a.js" async></script>",
-    "weight": "ASYNC_SCRIPT",
-  },
-  {
-    "element": "<script src="/a.js" defer></script>",
-    "weight": "DEFER_SCRIPT",
-  },
-  {
-    "element": "<script src="/a.js"></script>",
-    "weight": "SYNC_SCRIPT",
-  },
-  {
-    "element": "<script src="/a.js" type="module"></script>",
-    "weight": "DEFER_SCRIPT",
-  },
-  {
-    "element": "<script type="application/json">{"a":1}</script>",
-    "weight": "OTHER",
-  },
-  {
-    "element": "<script>console.log(1)</script>",
-    "weight": "SYNC_SCRIPT",
-  },
-  {
-    "element": "<script src="/legacy.js" nomodule></script>",
-    "weight": "SYNC_SCRIPT",
-  },
-  {
-    "element": "<link rel="icon" href="/favicon.ico">",
-    "weight": "OTHER",
-  },
-]
+}
 `;
 
-exports[`Element classification - additional cases > async + defer 1`] = `"DEFER_SCRIPT"`;
+exports[`groups tags detection > detects async script tags from rules 1`] = `
+{
+  "asyncScript": {
+    "classification": 0,
+    "isAsyncScriptTag": true,
+    "miscClassification": {
+      "groupId": "ASYNC_SCRIPT",
+      "groupWeight": 7,
+      "score": 700,
+      "tagWeight": 0,
+    },
+  },
+}
+`;
 
-exports[`Element classification - additional cases > modulepreload 1`] = `"PRELOAD"`;
+exports[`groups tags detection > detects connection tags from rules 1`] = `
+{
+  "dnsPrefetch": {
+    "classification": 0,
+    "isConnectionTag": true,
+    "miscClassification": {
+      "groupId": "CONNECTION",
+      "groupWeight": 9,
+      "score": 900,
+      "tagWeight": 0,
+    },
+  },
+  "preconnect": {
+    "classification": 1,
+    "isConnectionTag": true,
+    "miscClassification": {
+      "groupId": "CONNECTION",
+      "groupWeight": 9,
+      "score": 901,
+      "tagWeight": 1,
+    },
+  },
+}
+`;
 
-exports[`Element classification - additional cases > preconnect crossorigin 1`] = `"PRECONNECT"`;
+exports[`groups tags detection > detects deferred tags from rules 1`] = `
+{
+  "defer": {
+    "classification": 0,
+    "isDeferredTag": true,
+    "miscClassification": {
+      "groupId": "DEFERRED",
+      "groupWeight": 2,
+      "score": 200,
+      "tagWeight": 0,
+    },
+  },
+  "typeModule": {
+    "classification": 1,
+    "isDeferredTag": true,
+    "miscClassification": {
+      "groupId": "DEFERRED",
+      "groupWeight": 2,
+      "score": 201,
+      "tagWeight": 1,
+    },
+  },
+}
+`;
 
-exports[`Element classification - additional cases > preload font 1`] = `"PRELOAD"`;
+exports[`groups tags detection > detects execution tags from rules 1`] = `
+{
+  "script": {
+    "classification": 1,
+    "isExecutionTag": true,
+    "miscClassification": {
+      "groupId": "EXECUTION",
+      "groupWeight": 4,
+      "score": 401,
+      "tagWeight": 1,
+    },
+  },
+  "scriptBlocking": {
+    "classification": 2,
+    "isExecutionTag": true,
+    "miscClassification": {
+      "groupId": "EXECUTION",
+      "groupWeight": 4,
+      "score": 402,
+      "tagWeight": 2,
+    },
+  },
+  "scriptBlockingAsync": {
+    "classification": 5,
+    "isExecutionTag": true,
+    "miscClassification": {
+      "groupId": "ASYNC_SCRIPT",
+      "groupWeight": 7,
+      "score": 700,
+      "tagWeight": 0,
+    },
+  },
+  "scriptBlockingDefer": {
+    "classification": 4,
+    "isExecutionTag": true,
+    "miscClassification": {
+      "groupId": "EXECUTION",
+      "groupWeight": 4,
+      "score": 404,
+      "tagWeight": 4,
+    },
+  },
+  "scriptBlockingModule": {
+    "classification": 3,
+    "isExecutionTag": true,
+    "miscClassification": {
+      "groupId": "EXECUTION",
+      "groupWeight": 4,
+      "score": 403,
+      "tagWeight": 3,
+    },
+  },
+  "scriptInline": {
+    "classification": 6,
+    "isExecutionTag": true,
+    "miscClassification": {
+      "groupId": "EXECUTION",
+      "groupWeight": 4,
+      "score": 406,
+      "tagWeight": 6,
+    },
+  },
+  "scriptNomodule": {
+    "classification": 0,
+    "isExecutionTag": true,
+    "miscClassification": {
+      "groupId": "EXECUTION",
+      "groupWeight": 4,
+      "score": 400,
+      "tagWeight": 0,
+    },
+  },
+}
+`;
 
-exports[`Element classification - additional cases > prerender 1`] = `"PREFETCH_PRERENDER"`;
+exports[`groups tags detection > detects foundation tags from rules 1`] = `
+{
+  "base": {
+    "classification": 1,
+    "isFoundationTag": true,
+    "miscClassification": {
+      "groupId": "FOUNDATION",
+      "groupWeight": 11,
+      "score": 1101,
+      "tagWeight": 1,
+    },
+  },
+  "metaCharset": {
+    "classification": 4,
+    "isFoundationTag": true,
+    "miscClassification": {
+      "groupId": "FOUNDATION",
+      "groupWeight": 11,
+      "score": 1104,
+      "tagWeight": 4,
+    },
+  },
+  "metaCsp": {
+    "classification": 2,
+    "isFoundationTag": true,
+    "miscClassification": {
+      "groupId": "FOUNDATION",
+      "groupWeight": 11,
+      "score": 1102,
+      "tagWeight": 2,
+    },
+  },
+  "metaReferrer": {
+    "classification": 0,
+    "isFoundationTag": true,
+    "miscClassification": {
+      "groupId": "FOUNDATION",
+      "groupWeight": 11,
+      "score": 1100,
+      "tagWeight": 0,
+    },
+  },
+  "metaViewport": {
+    "classification": 3,
+    "isFoundationTag": true,
+    "miscClassification": {
+      "groupId": "FOUNDATION",
+      "groupWeight": 11,
+      "score": 1103,
+      "tagWeight": 3,
+    },
+  },
+}
+`;
 
-exports[`Element classification - additional cases > script application/json 1`] = `"OTHER"`;
+exports[`groups tags detection > detects import style tags from rules 1`] = `
+{
+  "importStyle": {
+    "classification": 0,
+    "isImportStyleTag": true,
+    "miscClassification": {
+      "groupId": "IMPORT_STYLES",
+      "groupWeight": 6,
+      "score": 600,
+      "tagWeight": 0,
+    },
+  },
+}
+`;
 
-exports[`Element classification - additional cases > script importmap 1`] = `"SYNC_SCRIPT"`;
+exports[`groups tags detection > detects importmap tags from rules 1`] = `
+{
+  "importmap": {
+    "classification": 0,
+    "isImportmapTag": true,
+    "miscClassification": {
+      "groupId": "IMPORTMAP",
+      "groupWeight": 5,
+      "score": 500,
+      "tagWeight": 0,
+    },
+  },
+}
+`;
 
-exports[`Element classification - additional cases > script nomodule 1`] = `"SYNC_SCRIPT"`;
+exports[`groups tags detection > detects prediction tags from rules 1`] = `
+{
+  "prefetch": {
+    "classification": 1,
+    "isPredictionTag": true,
+    "miscClassification": {
+      "groupId": "PREDICTION",
+      "groupWeight": 1,
+      "score": 101,
+      "tagWeight": 1,
+    },
+  },
+  "speculationRules": {
+    "classification": 0,
+    "isPredictionTag": true,
+    "miscClassification": {
+      "groupId": "PREDICTION",
+      "groupWeight": 1,
+      "score": 100,
+      "tagWeight": 0,
+    },
+  },
+}
+`;
 
-exports[`Element classification - additional cases > script speculation rules 1`] = `"SYNC_SCRIPT"`;
+exports[`groups tags detection > detects preparation tags from rules 1`] = `
+{
+  "modulepreload": {
+    "classification": 0,
+    "isPreparationTag": true,
+    "miscClassification": {
+      "groupId": "PREPARATION",
+      "groupWeight": 8,
+      "score": 800,
+      "tagWeight": 0,
+    },
+  },
+  "preload": {
+    "classification": 1,
+    "isPreparationTag": true,
+    "miscClassification": {
+      "groupId": "PREPARATION",
+      "groupWeight": 8,
+      "score": 801,
+      "tagWeight": 1,
+    },
+  },
+}
+`;
+
+exports[`groups tags detection > detects style tags from rules 1`] = `
+{
+  "linkStylesheet": {
+    "classification": 0,
+    "isStyleTag": true,
+    "miscClassification": {
+      "groupId": "STYLING",
+      "groupWeight": 3,
+      "score": 300,
+      "tagWeight": 0,
+    },
+  },
+  "style": {
+    "classification": 1,
+    "isStyleTag": true,
+    "miscClassification": {
+      "groupId": "STYLING",
+      "groupWeight": 3,
+      "score": 301,
+      "tagWeight": 1,
+    },
+  },
+}
+`;
+
+exports[`groups tags detection > does not classify unrelated tags 1`] = `
+{
+  "link": {
+    "isIdentityTag": false,
+    "miscClassification": {
+      "groupId": "STYLING",
+      "groupWeight": 3,
+      "score": 300,
+      "tagWeight": 0,
+    },
+  },
+  "linkOGImage": {
+    "isConnectionTag": false,
+    "miscClassification": {
+      "groupId": "MISC",
+      "groupWeight": 0,
+      "score": 0,
+      "tagWeight": 0,
+    },
+  },
+  "linkStylesheet": {
+    "isDeferredTag": false,
+    "miscClassification": {
+      "groupId": "STYLING",
+      "groupWeight": 3,
+      "score": 300,
+      "tagWeight": 0,
+    },
+  },
+  "metaCharset": {
+    "isImportmapTag": false,
+    "miscClassification": {
+      "groupId": "FOUNDATION",
+      "groupWeight": 11,
+      "score": 1104,
+      "tagWeight": 4,
+    },
+  },
+  "metaDescription": {
+    "isFoundationTag": false,
+    "miscClassification": {
+      "groupId": "MISC",
+      "groupWeight": 0,
+      "score": 0,
+      "tagWeight": 0,
+    },
+  },
+  "metaOGDecription": {
+    "isMiscTag": true,
+    "miscClassification": {
+      "groupId": "MISC",
+      "groupWeight": 0,
+      "score": 0,
+      "tagWeight": 0,
+    },
+  },
+  "metaViewport": {
+    "isAsyncScriptTag": false,
+    "miscClassification": {
+      "groupId": "FOUNDATION",
+      "groupWeight": 11,
+      "score": 1103,
+      "tagWeight": 3,
+    },
+  },
+  "prerenderLink": {
+    "isPredictionTag": false,
+    "miscClassification": {
+      "groupId": "MISC",
+      "groupWeight": 0,
+      "score": 0,
+      "tagWeight": 0,
+    },
+  },
+  "script": {
+    "isPreparationTag": false,
+    "miscClassification": {
+      "groupId": "EXECUTION",
+      "groupWeight": 4,
+      "score": 406,
+      "tagWeight": 6,
+    },
+  },
+  "scriptAsync": {
+    "isStyleTag": false,
+    "miscClassification": {
+      "groupId": "ASYNC_SCRIPT",
+      "groupWeight": 7,
+      "score": 700,
+      "tagWeight": 0,
+    },
+  },
+  "scriptJson": {
+    "isExecutionTag": false,
+    "miscClassification": {
+      "groupId": "MISC",
+      "groupWeight": 0,
+      "score": 0,
+      "tagWeight": 0,
+    },
+  },
+  "scriptSchema": {
+    "isImportStyleTag": false,
+    "miscClassification": {
+      "groupId": "MISC",
+      "groupWeight": 0,
+      "score": 0,
+      "tagWeight": 0,
+    },
+  },
+}
+`;
+
+exports[`priority behavior > async beats defer beats prefetch by group weight 1`] = `
+{
+  "asyncBeatsDefer": true,
+  "asyncGroupWeight": 7,
+  "deferBeatsPrefetch": true,
+  "deferGroupWeight": 2,
+  "prefetchGroupWeight": 1,
+}
+`;
+
+exports[`priority behavior > charset beats viewport inside Foundation Group by tag weight 1`] = `
+{
+  "charset": {
+    "groupId": "FOUNDATION",
+    "tagWeight": 4,
+  },
+  "charsetBeatsViewport": true,
+  "viewport": {
+    "groupId": "FOUNDATION",
+    "tagWeight": 3,
+  },
+}
+`;
+
+exports[`priority behavior > multiple rel tokens are supported 1`] = `
+{
+  "groupId": "CONNECTION",
+  "groupWeight": 9,
+  "score": 901,
+  "tagWeight": 1,
+}
+`;
