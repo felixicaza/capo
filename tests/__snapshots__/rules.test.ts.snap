@@ -253,16 +253,6 @@ exports[`groups tags detection > detects importmap tags from rules 1`] = `
 exports[`groups tags detection > detects prediction tags from rules 1`] = `
 {
   "prefetch": {
-    "classification": 1,
-    "isPredictionTag": true,
-    "miscClassification": {
-      "groupId": "PREDICTION",
-      "groupWeight": 1,
-      "score": 101,
-      "tagWeight": 1,
-    },
-  },
-  "speculationRules": {
     "classification": 0,
     "isPredictionTag": true,
     "miscClassification": {
@@ -270,6 +260,16 @@ exports[`groups tags detection > detects prediction tags from rules 1`] = `
       "groupWeight": 1,
       "score": 100,
       "tagWeight": 0,
+    },
+  },
+  "speculationRules": {
+    "classification": 1,
+    "isPredictionTag": true,
+    "miscClassification": {
+      "groupId": "PREDICTION",
+      "groupWeight": 1,
+      "score": 101,
+      "tagWeight": 1,
     },
   },
 }

@@ -2,7 +2,7 @@
 
 exports[`Capo ordering > orders mixed head according to rules groups and tags weights 1`] = `
 {
-  "output": "<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><base href="https://example.com/"><meta name="referrer" content="no-referrer"><title>Site</title><link rel="preconnect" href="https://cdn.example.com"><link rel="dns-prefetch" href="//cdn.example.com"><link rel="preload" href="/font.woff2" as="font"><link rel="modulepreload" href="/m.js"><script src="/test.js" type="module" async=""></script><script src="/async.js" async=""></script><style>@import url("/a.css");</style><script type="importmap">{"imports":{}}</script><script src="/sync.js" blocking="render"></script><style>body{}</style><link rel="stylesheet" href="/style.css"><script src="/module.js" type="module"></script><script src="/defer.js" defer=""></script><link rel="prefetch" href="/x.js"><script type="speculationrules">{"prefetch":[{"urls":["a.html"]}]}</script><meta name="description" content="A"><meta property="og:image" content="image.png"><link rel="icon" type="image/x-icon" href="/images/favicon.ico"><meta property="og:title" content="a"></head><body></body></html>",
+  "output": "<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><base href="https://example.com/"><meta name="referrer" content="no-referrer"><title>Site</title><link rel="preconnect" href="https://cdn.example.com"><link rel="dns-prefetch" href="//cdn.example.com"><link rel="preload" href="/font.woff2" as="font"><link rel="modulepreload" href="/m.js"><script src="/test.js" type="module" async=""></script><script src="/async.js" async=""></script><style>@import url("/a.css");</style><script type="importmap">{"imports":{}}</script><script src="/sync.js" blocking="render"></script><style>body{}</style><link rel="stylesheet" href="/style.css"><script src="/module.js" type="module"></script><script src="/defer.js" defer=""></script><script type="speculationrules">{"prefetch":[{"urls":["a.html"]}]}</script><link rel="prefetch" href="/x.js"><meta name="description" content="A"><meta property="og:image" content="image.png"><link rel="icon" type="image/x-icon" href="/images/favicon.ico"><meta property="og:title" content="a"></head><body></body></html>",
   "sequence": [
     "meta[charset=utf-8]",
     "meta[name=viewport]",
@@ -22,8 +22,8 @@ exports[`Capo ordering > orders mixed head according to rules groups and tags we
     "link[rel=stylesheet;href=/style.css]",
     "script[type=module;src=/module.js]",
     "script[src=/defer.js;defer]",
-    "link[rel=prefetch;href=/x.js]",
     "script[type=speculationrules]",
+    "link[rel=prefetch;href=/x.js]",
     "meta[name=description]",
     "meta[property=og:image]",
     "link[rel=icon;href=/images/favicon.ico]",
