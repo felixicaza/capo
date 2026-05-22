@@ -4,7 +4,7 @@ import { renderAllHeadContent } from 'astro/runtime/server/render/head.js'
 import { chunkToString } from 'astro/runtime/server/render/common.js'
 import { createComponent, renderSlot, spreadAttributes, unescapeHTML } from 'astro/runtime/server/index.js'
 
-import capo from '../capo/index.ts'
+import { capo } from '../capo/index.ts'
 
 export const Head = createComponent({
   // @ts-expect-error using astro internals

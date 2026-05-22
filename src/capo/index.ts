@@ -1,33 +1,24 @@
-import type { ElementNode } from 'ultrahtml'
-import { parse, walkSync, renderSync, ELEMENT_NODE } from 'ultrahtml'
-import { getWeight } from './rules.ts'
+import { ELEMENT_NODE, parse, renderSync, walkSync } from 'ultrahtml'
+import { getSortedHead } from './utils/getSortedHead.ts'
 
-export default function capo(html: string) {
+const DONE_ERROR = '__CAPO_DONE__'
+
+export function capo(html: string): string {
   const ast = parse(html)
+
   try {
     walkSync(ast, (node, parent, index) => {
-      if (node.type === ELEMENT_NODE && node.name === 'head') {
-        if (parent) {
-          parent.children.splice(index, 1, getSortedHead(node))
-          // eslint-disable-next-line no-throw-literal
-          throw 'done' // short-circuit
-        }
-      }
-    })
-  } catch (e) {
-    if (e !== 'done') throw e
-  }
-  return renderSync(ast)
-}
+      if (node.type !== ELEMENT_NODE || node.name !== 'head') return
+      if (!parent) return
 
-function getSortedHead(head: ElementNode): ElementNode {
-  // eslint-disable-next-line array-callback-return
-  const weightedChildren = head.children.map((node) => {
-    if (node.type === ELEMENT_NODE) {
-      const weight = getWeight(node)
-      return [weight, node]
+      parent.children.splice(index, 1, getSortedHead(node))
+      throw new Error(DONE_ERROR)
+    })
+  } catch (error) {
+    if (!(error instanceof Error) || error.message !== DONE_ERROR) {
+      throw error
     }
-  }).filter(Boolean) as [number, ElementNode][]
-  const children = weightedChildren.sort((a, b) => b[0] - a[0]).map(([_, element]) => element)
-  return { ...head, children }
+  }
+
+  return renderSync(ast)
 }
