@@ -136,4 +136,4 @@ pnpm-lock.yaml
 # Astro types
 .astro
 
-dist
+/dist/
