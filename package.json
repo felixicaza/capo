@@ -1,7 +1,7 @@
 {
   "name": "@felixicaza/astro-capo",
   "version": "1.1.0",
-  "description": "Automatically sort your head with capo.js in Astro",
+  "description": "🔷🚀 The most accurate `<head>` sorting in Astro!",
   "keywords": [
     "astro",
     "astro-component",
@@ -11,7 +11,7 @@
     "order",
     "optimization"
   ],
-  "homepage": "https://github.com/felixicaza/astro-capo",
+  "homepage": "https://github.com/felixicaza/astro-capo#readme",
   "bugs": {
     "url": "https://github.com/felixicaza/astro-capo/issues"
   },
@@ -74,7 +74,10 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "astro": ">=3.6"
+    "astro": ">=3.6.0"
+  },
+  "engines": {
+    "node": ">=18.14.1"
   },
   "author": "Felix Icaza <fx.joliett17@gmail.com>"
 }
