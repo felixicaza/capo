@@ -27,6 +27,8 @@ export const Head = createComponent({
     head += chunkToString(result, renderAllHeadContent(result))
     head += '</head>'
 
-    return unescapeHTML(capo(head))
+    const sortedHead = capo(head)
+    console.info(' [astro-capo] Head tags sorted!')
+    return unescapeHTML(sortedHead)
   }
 })
