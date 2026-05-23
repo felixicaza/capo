@@ -1,6 +1,8 @@
 import type { Attributes } from '../types/index.ts'
 
 import { hasRel, hasType } from '../helpers/index.ts'
+import { TAGS } from '../constants/tags.ts'
+import { REL_KEYWORDS, TYPE_KEYWORDS } from '../constants/keywords.ts'
 
 const PredictionWeight = {
   SPECULATIONRULES: 1,
@@ -8,8 +10,8 @@ const PredictionWeight = {
 } as const
 
 export function classifyPredictionTags(name: string, attributes: Attributes): number | undefined {
-  if (name === 'script' && hasType(attributes, 'speculationrules')) return PredictionWeight.SPECULATIONRULES
-  if (name === 'link' && hasRel(attributes, 'prefetch')) return PredictionWeight.PREFETCH
+  if (name === TAGS.Script && hasType(attributes, TYPE_KEYWORDS.SpeculationRules)) return PredictionWeight.SPECULATIONRULES // <script type="speculationrules">
+  if (name === TAGS.Link && hasRel(attributes, REL_KEYWORDS.Prefetch)) return PredictionWeight.PREFETCH // <link rel="prefetch">
 
   return undefined
 }

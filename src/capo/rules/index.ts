@@ -13,6 +13,7 @@ import { classifyDeferredTags } from './deferredTags.ts'
 import { classifyPredictionTags } from './preditionTags.ts'
 
 import { getElementText } from '../helpers/index.ts'
+import { TAGS } from '../constants/tags.ts'
 import { GroupId } from '../types/index.ts'
 
 export const GroupsWeight: Record<GroupIdValue, number> = {
@@ -53,8 +54,7 @@ export const classificationPipeline: RuleEntry[] = [
   },
   {
     groupId: GroupId.IMPORT_STYLES,
-    classify: (element) =>
-      classifyImportStyleTags(element.name, element.attributes, element.name === 'style' ? getElementText(element) : '')
+    classify: (element) => classifyImportStyleTags(element.name, element.attributes, element.name === TAGS.Style ? getElementText(element) : '')
   },
   {
     groupId: GroupId.IMPORTMAP,
@@ -80,11 +80,12 @@ export const classificationPipeline: RuleEntry[] = [
 
 export function buildClassification(groupId: GroupIdValue, tagWeight: number): Classification {
   const groupWeight = GroupsWeight[groupId]
+  const score = groupWeight * 100 + tagWeight
 
   return {
     groupId,
     groupWeight,
     tagWeight,
-    score: groupWeight * 100 + tagWeight
+    score
   }
 }

@@ -1,5 +1,6 @@
 import { ELEMENT_NODE, parse, renderSync, walkSync } from 'ultrahtml'
 import { getSortedHead } from './utils/getSortedHead.ts'
+import { TAGS } from './constants/tags.ts'
 
 const DONE_ERROR = '__CAPO_DONE__'
 
@@ -8,7 +9,7 @@ export function capo(html: string): string {
 
   try {
     walkSync(ast, (node, parent, index) => {
-      if (node.type !== ELEMENT_NODE || node.name !== 'head') return
+      if (node.type !== ELEMENT_NODE || node.name !== TAGS.Head) return
       if (!parent) return
 
       parent.children.splice(index, 1, getSortedHead(node))

@@ -39,9 +39,10 @@ export function getSortedHead(head: ElementNode): ElementNode {
     cursor += 1
     return nextElement
   })
+  const children = mergedChildren
 
   return {
     ...head,
-    children: mergedChildren
+    children
   }
 }
