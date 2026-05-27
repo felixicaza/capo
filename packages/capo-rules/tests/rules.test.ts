@@ -16,18 +16,18 @@ import {
   isMiscTags
 } from './helpers/verifyTags.ts'
 
-import { classifyFoundationTags } from '../src/capo/rules/foundationTags.ts'
-import { classifyIdentityTag } from '../src/capo/rules/identityTag.ts'
-import { classifyConnectionTags } from '../src/capo/rules/connectionTags.ts'
-import { classifyPreparationTags } from '../src/capo/rules/preparationTags.ts'
-import { classifyAsyncScriptTags } from '../src/capo/rules/asyncScriptTags.ts'
-import { classifyImportStyleTags } from '../src/capo/rules/importStyleTags.ts'
-import { classifyImportmapTags } from '../src/capo/rules/importmapTags.ts'
-import { classifyExecutionTags } from '../src/capo/rules/executionTags.ts'
-import { classifyStyleTags } from '../src/capo/rules/styleTags.ts'
-import { classifyDeferredTags } from '../src/capo/rules/deferredTags.ts'
-import { classifyPredictionTags } from '../src/capo/rules/preditionTags.ts'
-import { classifyMiscTags } from '../src/capo/rules/miscTags.ts'
+import { classifyFoundationTags } from '../packages/capo-rules/rules/foundationTags.ts'
+import { classifyIdentityTag } from '../packages/capo-rules/rules/identityTag.ts'
+import { classifyConnectionTags } from '../packages/capo-rules/rules/connectionTags.ts'
+import { classifyPreparationTags } from '../packages/capo-rules/rules/preparationTags.ts'
+import { classifyAsyncScriptTags } from '../packages/capo-rules/rules/asyncScriptTags.ts'
+import { classifyImportStyleTags } from '../packages/capo-rules/rules/importStyleTags.ts'
+import { classifyImportmapTags } from '../packages/capo-rules/rules/importmapTags.ts'
+import { classifyExecutionTags } from '../packages/capo-rules/rules/executionTags.ts'
+import { classifyStyleTags } from '../packages/capo-rules/rules/styleTags.ts'
+import { classifyDeferredTags } from '../packages/capo-rules/rules/deferredTags.ts'
+import { classifyPredictionTags } from '../packages/capo-rules/rules/preditionTags.ts'
+import { classifyMiscTags } from '../packages/capo-rules/rules/miscTags.ts'
 
 describe('groups tags detection', () => {
   test('detects foundation tags from rules', () => {

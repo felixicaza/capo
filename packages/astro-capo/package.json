@@ -1,0 +1,55 @@
+{
+  "name": "@felixicaza/astro-capo",
+  "version": "1.2.0",
+  "description": "🔷🚀 The most accurate `<head>` sorting in Astro!",
+  "keywords": [
+    "astro",
+    "astro-component",
+    "performance",
+    "capo.js",
+    "head",
+    "order",
+    "optimization"
+  ],
+  "homepage": "https://github.com/felixicaza/astro-capo#readme",
+  "bugs": {
+    "url": "https://github.com/felixicaza/astro-capo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixicaza/astro-capo.git",
+    "directory": "packages/astro-capo"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch"
+  },
+  "dependencies": {
+    "capo-rules": "workspace:*"
+  },
+  "devDependencies": {
+    "astro": "6.3.3"
+  },
+  "peerDependencies": {
+    "astro": ">=3.6.0"
+  },
+  "engines": {
+    "node": ">=18.14.1"
+  },
+  "author": "Felix Icaza <fx.joliett17@gmail.com>"
+}

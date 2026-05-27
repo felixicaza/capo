@@ -7,9 +7,9 @@
   "type": "module",
   "scripts": {
     "astro": "astro",
-    "build": "astro build",
-    "dev": "astro dev",
-    "preview": "astro preview"
+    "build:fixture": "astro build",
+    "dev:fixture": "astro dev",
+    "preview:fixture": "astro preview"
   },
   "dependencies": {
     "@felixicaza/astro-capo": "workspace:*",

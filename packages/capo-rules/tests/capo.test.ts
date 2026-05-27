@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
-import { capo } from '../src/capo'
+import { capo } from '../packages/capo-rules/index.ts'
 import { extractHeadSequence } from './helpers/extractHeadSequence.ts'
 
 describe('Capo ordering', () => {

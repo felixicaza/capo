@@ -1,48 +1,22 @@
 {
-  "name": "@felixicaza/astro-capo",
-  "version": "1.2.0",
-  "description": "🔷🚀 The most accurate `<head>` sorting in Astro!",
-  "keywords": [
-    "astro",
-    "astro-component",
-    "performance",
-    "capo.js",
-    "head",
-    "order",
-    "optimization"
-  ],
-  "homepage": "https://github.com/felixicaza/astro-capo#readme",
-  "bugs": {
-    "url": "https://github.com/felixicaza/astro-capo/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/felixicaza/astro-capo.git"
-  },
+  "name": "@felixicaza/capo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Monorepo for `@felixicaza/astro-capo` and `capo-rules`.",
   "license": "MIT",
   "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "tsdown",
-    "dev": "tsdown --watch",
+    "build": "pnpm -r build",
+    "dev": "pnpm -r dev",
     "lint": "eslint --cache .",
     "lint:fix": "eslint --cache --fix .",
     "prepare": "simple-git-hooks",
-    "prepublishOnly": "pnpm build",
+    "prepublishOnly": "pnpm -r build",
     "release": "bumpp",
     "test": "vitest",
-    "test:fixtures": "pnpm -r build"
+    "test:build:fixtures": "pnpm -r build:fixture",
+    "test:fixtures": "pnpm -r dev:fixture",
+    "test:preview:fixtures": "pnpm -r preview:fixture"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm nano-staged"
@@ -50,14 +24,10 @@
   "nano-staged": {
     "*": "pnpm lint:fix"
   },
-  "dependencies": {
-    "ultrahtml": "1.6.0"
-  },
   "devDependencies": {
     "@eslint/js": "9.39.1",
     "@felixicaza/tsdown-config": "0.1.1",
     "@typescript-eslint/parser": "8.59.3",
-    "astro": "6.3.3",
     "bumpp": "11.1.0",
     "eslint": "9.39.1",
     "eslint-plugin-astro": "1.7.0",
@@ -70,14 +40,8 @@
     "neostandard": "0.13.0",
     "simple-git-hooks": "2.13.1",
     "tsdown": "0.22.0",
+    "typescript": "6.0.3",
     "vitest": "4.1.6"
-  },
-  "sideEffects": false,
-  "peerDependencies": {
-    "astro": ">=3.6.0"
-  },
-  "engines": {
-    "node": ">=18.14.1"
   },
   "author": "Felix Icaza <fx.joliett17@gmail.com>"
 }

@@ -1,0 +1,44 @@
+{
+  "name": "capo-rules",
+  "version": "0.0.0",
+  "description": "🔷 The most acurrate and modern `<head>` sorting!",
+  "keywords": [
+    "performance",
+    "capo.js",
+    "head",
+    "order",
+    "optimization"
+  ],
+  "homepage": "https://github.com/felixicaza/capo/tree/main/packages/capo-rules#readme",
+  "bugs": {
+    "url": "https://github.com/felixicaza/capo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixicaza/capo.git",
+    "directory": "packages/capo-rules"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "ultrahtml": "1.6.0"
+  },
+  "author": "Felix Icaza <fx.joliett17@gmail.com>"
+}
