@@ -1,0 +1,21 @@
+{
+  "prettier.enable": false,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  "eslint.validate": [
+    "astro",
+    "json",
+    "jsonc",
+    "json5",
+    "yaml"
+  ],
+
+  "[yaml]": {
+    "editor.tabSize": 3
+  }
+}
