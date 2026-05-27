@@ -16,18 +16,18 @@ import {
   isMiscTags
 } from './helpers/verifyTags.ts'
 
-import { classifyFoundationTags } from '../packages/capo-rules/rules/foundationTags.ts'
-import { classifyIdentityTag } from '../packages/capo-rules/rules/identityTag.ts'
-import { classifyConnectionTags } from '../packages/capo-rules/rules/connectionTags.ts'
-import { classifyPreparationTags } from '../packages/capo-rules/rules/preparationTags.ts'
-import { classifyAsyncScriptTags } from '../packages/capo-rules/rules/asyncScriptTags.ts'
-import { classifyImportStyleTags } from '../packages/capo-rules/rules/importStyleTags.ts'
-import { classifyImportmapTags } from '../packages/capo-rules/rules/importmapTags.ts'
-import { classifyExecutionTags } from '../packages/capo-rules/rules/executionTags.ts'
-import { classifyStyleTags } from '../packages/capo-rules/rules/styleTags.ts'
-import { classifyDeferredTags } from '../packages/capo-rules/rules/deferredTags.ts'
-import { classifyPredictionTags } from '../packages/capo-rules/rules/preditionTags.ts'
-import { classifyMiscTags } from '../packages/capo-rules/rules/miscTags.ts'
+import { classifyFoundationTags } from '../src/rules/foundationTags.ts'
+import { classifyIdentityTag } from '../src/rules/identityTag.ts'
+import { classifyConnectionTags } from '../src/rules/connectionTags.ts'
+import { classifyPreparationTags } from '../src/rules/preparationTags.ts'
+import { classifyAsyncScriptTags } from '../src/rules/asyncScriptTags.ts'
+import { classifyImportStyleTags } from '../src/rules/importStyleTags.ts'
+import { classifyImportmapTags } from '../src/rules/importmapTags.ts'
+import { classifyExecutionTags } from '../src/rules/executionTags.ts'
+import { classifyStyleTags } from '../src/rules/styleTags.ts'
+import { classifyDeferredTags } from '../src/rules/deferredTags.ts'
+import { classifyPredictionTags } from '../src/rules/preditionTags.ts'
+import { classifyMiscTags } from '../src/rules/miscTags.ts'
 
 describe('groups tags detection', () => {
   test('detects foundation tags from rules', () => {

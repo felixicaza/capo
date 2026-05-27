@@ -2,7 +2,7 @@ import type { ElementNode } from 'ultrahtml'
 
 import { ELEMENT_NODE, parse } from 'ultrahtml'
 
-type AstNode = {
+interface AstNode {
   type?: number
   name?: string
   children?: AstNode[]
@@ -10,7 +10,7 @@ type AstNode = {
 }
 
 export function parseElement(element: string): ElementNode {
-  const ast = parse('<head>' + element + '</head>') as { children: AstNode[] }
+  const ast = parse(`<head>${element}</head>`) as { children: AstNode[] }
 
   const head = ast.children.find((node) => node.name === 'head')
   if (!head || !Array.isArray(head.children)) {

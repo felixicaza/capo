@@ -3,6 +3,7 @@ export function extractHeadSequence(html: string) {
   const childs = match ? match[1] : ''
   const tags = Array.from(childs.matchAll(/<(meta|title|link|script|style|base)\b[^>]*>/gi))
 
+  // oxlint-disable complexity/complexity
   return tags.map((tag) => {
     const full = tag[0]
     const name = tag[1].toLowerCase()

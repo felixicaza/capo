@@ -8,7 +8,7 @@ import { capo } from 'capo-rules'
 
 export const Head = createComponent({
   // @ts-expect-error using astro internals
-  factory: async (result: SSRResult, props: Record<string, any>, slots: Record<string, any>) => {
+  factory: async(result: SSRResult, props: Record<string, any>, slots: Record<string, any>) => {
     let head = ''
     head += `<head${spreadAttributes(props)} data-capo>`
 

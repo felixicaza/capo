@@ -25,19 +25,19 @@ export type GroupIdValue = keyof typeof GroupId
 
 export type Attributes = Record<string, string>
 
-export type Classification = {
+export interface Classification {
   groupId: GroupIdValue
   groupWeight: number
   tagWeight: number
   score: number
 }
 
-export type RuleEntry = {
+export interface RuleEntry {
   groupId: GroupIdValue
   classify: (element: ElementNode) => number | undefined
 }
 
-export type RankedElement = {
+export interface RankedElement {
   index: number
   node: ElementNode
   groupWeight: number

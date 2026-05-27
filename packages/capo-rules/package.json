@@ -19,6 +19,8 @@
     "directory": "packages/capo-rules"
   },
   "license": "Apache-2.0",
+  "author": "Felix Icaza <fx.joliett17@gmail.com>",
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
@@ -36,9 +38,7 @@
     "build": "tsdown",
     "dev": "tsdown --watch"
   },
-  "sideEffects": false,
   "dependencies": {
     "ultrahtml": "1.6.0"
-  },
-  "author": "Felix Icaza <fx.joliett17@gmail.com>"
+  }
 }

@@ -15,7 +15,7 @@ export function capo(html: string): string {
       parent.children.splice(index, 1, getSortedHead(node))
       throw new Error(DONE_ERROR)
     })
-  } catch (error) {
+  } catch(error) {
     if (!(error instanceof Error) || error.message !== DONE_ERROR) {
       throw error
     }
