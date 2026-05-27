@@ -1,22 +1,24 @@
 {
   "name": "@felixicaza/capo",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "description": "Monorepo for `@felixicaza/astro-capo` and `capo-rules`.",
   "license": "MIT",
+  "author": "Felix Icaza <fx.joliett17@gmail.com>",
   "type": "module",
   "scripts": {
     "build": "pnpm -r build",
     "dev": "pnpm -r dev",
-    "lint": "eslint --cache .",
-    "lint:fix": "eslint --cache --fix .",
+    "lint": "oxlint . && eslint . --cache",
+    "lint:fix": "oxlint . --fix --fix-suggestions --fix-dangerously && eslint . --cache --fix",
     "prepare": "simple-git-hooks",
-    "prepublishOnly": "pnpm -r build",
+    "prepublishOnly": "pnpm build",
     "release": "bumpp",
     "test": "vitest",
     "test:build:fixtures": "pnpm -r build:fixture",
     "test:fixtures": "pnpm -r dev:fixture",
-    "test:preview:fixtures": "pnpm -r preview:fixture"
+    "test:preview:fixtures": "pnpm -r preview:fixture",
+    "typecheck": "oxlint --type-aware --type-check"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm nano-staged"
@@ -25,23 +27,18 @@
     "*": "pnpm lint:fix"
   },
   "devDependencies": {
-    "@eslint/js": "9.39.1",
+    "@felixicaza/eslint-config": "0.1.1",
+    "@felixicaza/oxlint-config": "0.1.2",
     "@felixicaza/tsdown-config": "0.1.1",
-    "@typescript-eslint/parser": "8.59.3",
+    "@types/node": "25.9.1",
     "bumpp": "11.1.0",
-    "eslint": "9.39.1",
-    "eslint-plugin-astro": "1.7.0",
-    "eslint-plugin-jsonc": "3.1.2",
-    "eslint-plugin-package-json": "0.91.2",
-    "eslint-plugin-yml": "3.3.2",
-    "globals": "17.6.0",
+    "eslint": "9.39.4",
     "jiti": "2.7.0",
     "nano-staged": "1.0.2",
-    "neostandard": "0.13.0",
+    "oxlint": "1.67.0",
     "simple-git-hooks": "2.13.1",
     "tsdown": "0.22.0",
     "typescript": "6.0.3",
     "vitest": "4.1.6"
-  },
-  "author": "Felix Icaza <fx.joliett17@gmail.com>"
+  }
 }
