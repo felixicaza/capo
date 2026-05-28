@@ -63,4 +63,4 @@ jobs:
            run: pnpm test
 
          - name: Test Fixtures
-           run: pnpm test:fixtures
+           run: pnpm test:build:fixtures
