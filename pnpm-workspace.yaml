@@ -1,6 +1,23 @@
+saveExact: true
+blockExoticSubdeps: true
+autoInstallPeers: false
+minimumReleaseAge: 2880
+trustPolicy: no-downgrade
+strictPeerDependencies: false # TODO: Enable
+strictDepBuilds: true
+dedupePeers: true
+shellEmulator: true
+color: always
+
 packages:
    - packages/*
    - packages/astro-capo/fixtures/*
+
+
+packageExtensions:
+   "oxlint-plugin-complexity@*":
+      dependencies:
+         "@oxlint/plugins": "*"
 
 allowBuilds:
    esbuild: true
@@ -9,3 +26,4 @@ allowBuilds:
 
 trustPolicyExclude:
    - "semver@6.3.1"
+   - "tinyexec@1.2.2"
