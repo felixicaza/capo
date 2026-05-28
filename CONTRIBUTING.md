@@ -1,4 +1,4 @@
-# Contributing to @felixicaza/astro-capo
+# Contributing to @felixicaza/astro-capo and capo-rules
 
 I'm excited that you are interested in contributing to this repository! This guide will help you get started with your contributions.
 
@@ -14,8 +14,8 @@ I'm excited that you are interested in contributing to this repository! This gui
 
 There are several ways you can contribute to this project:
 
-1. **Reporting Bugs**: If you find a bug, please report it by [creating an issue](https://github.com/felixicaza/astro-capo/issues). Each package has a label to easily identify which package the issue corresponds to, so please use the appropriate labels.
-2. **Suggesting Features**: If you have an idea for a new feature, please open an [issue](https://github.com/felixicaza/astro-capo/issues).
+1. **Reporting Bugs**: If you find a bug, please report it by [creating an issue](https://github.com/felixicaza/capo/issues). Each package has a label to easily identify which package the issue corresponds to, so please use the appropriate labels.
+2. **Suggesting Features**: If you have an idea for a new feature, please open an [issue](https://github.com/felixicaza/capo/issues).
 3. **Improving Documentation**: Help improve documentation by making it clearer and more comprehensive.
 4. **Submitting Code Changes**: If you want to fix a bug or implement a new feature, follow the steps below to submit your changes.
 
@@ -26,7 +26,7 @@ There are several ways you can contribute to this project:
 
 2. **Clone your fork**:
     ```sh
-    git clone https://github.com/yourusername/astro-capo.git
+    git clone https://github.com/yourusername/capo.git
     ```
 
 3. **Install dependencies**:
@@ -61,7 +61,7 @@ There are several ways you can contribute to this project:
 
 ## Reporting Issues
 
-If you encounter any issues while using the plugins, please report them by [creating an issue](https://github.com/felixicaza/astro-capo/issues) in the repository. Provide as much detail as possible to help us understand and resolve the issue quickly.
+If you encounter any issues while using the plugins, please report them by [creating an issue](https://github.com/felixicaza/capo/issues) in the repository. Provide as much detail as possible to help us understand and resolve the issue quickly.
 
 ## Getting Help
 
