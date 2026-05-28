@@ -1,7 +1,7 @@
 {
   "name": "@felixicaza/astro-capo",
   "version": "1.2.0",
-  "description": "🔷🚀 The most accurate `<head>` sorting in Astro!",
+  "description": "🔷🚀 The most accurate and modern `<head>` sorting in Astro!",
   "keywords": [
     "astro",
     "astro-component",
@@ -11,13 +11,13 @@
     "order",
     "optimization"
   ],
-  "homepage": "https://github.com/felixicaza/astro-capo#readme",
+  "homepage": "https://github.com/felixicaza/capo/tree/main/packages/astro-capo#readme",
   "bugs": {
-    "url": "https://github.com/felixicaza/astro-capo/issues"
+    "url": "https://github.com/felixicaza/capo/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/felixicaza/astro-capo.git",
+    "url": "git+https://github.com/felixicaza/capo.git",
     "directory": "packages/astro-capo"
   },
   "license": "MIT",
@@ -41,7 +41,7 @@
     "dev": "tsdown --watch"
   },
   "dependencies": {
-    "capo-rules": "workspace:*"
+    "capo-rules": "0.0.1"
   },
   "devDependencies": {
     "astro": "6.3.3"
