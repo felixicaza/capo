@@ -7,7 +7,8 @@ permissions:
 on:
    push:
       tags:
-         - "v*"
+         - "@felixicaza/astro-capo@*"
+         - "capo-rules@*"
 
 jobs:
    release:
@@ -22,26 +23,40 @@ jobs:
               node-version: lts/*
               registry-url: https://registry.npmjs.org/
 
-         - run: npm install -g npm@latest
-
          - uses: pnpm/action-setup@v6
            with:
               version: latest
+
+         - name: Install dependencies
+           run: pnpm ci
+
+         - name: Build packages
+           run: pnpm build
 
          - run: pnpx changelogithub
            env:
               GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-         - run: pnpm install --no-frozen-lockfile
-
-         - run: |
+         - name: Resolve package from tag
+           run: |
               TAG="${GITHUB_REF_NAME}"
-              if [[ "$TAG" == *"beta"* ]]; then
-                 echo "Publishing beta version"
-                 pnpm publish --tag beta --access public --no-git-checks
+
+              if [[ "$TAG" == @felixicaza/astro-capo@* ]]; then
+                echo "PACKAGE_DIR=packages/astro-capo" >> "$GITHUB_ENV"
+                echo "PACKAGE_NAME=@felixicaza/astro-capo" >> "$GITHUB_ENV"
+              elif [[ "$TAG" == capo-rules@* ]]; then
+                echo "PACKAGE_DIR=packages/capo-rules" >> "$GITHUB_ENV"
+                echo "PACKAGE_NAME=capo-rules" >> "$GITHUB_ENV"
               else
-                 echo "Publishing stable version"
-                 pnpm publish --access public --no-git-checks
+                echo "Unsupported tag format: $TAG"
+                exit 1
               fi
+
+              echo "DIST_TAG=latest" >> "$GITHUB_ENV"
+
+         - name: Publish selected package
+           run: |
+              echo "Publishing $PACKAGE_NAME from $PACKAGE_DIR with dist-tag: $DIST_TAG"
+              pnpm -C "$PACKAGE_DIR" publish --access public --no-git-checks
            env:
               NPM_CONFIG_PROVENANCE: true
