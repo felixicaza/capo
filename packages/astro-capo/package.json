@@ -1,6 +1,6 @@
 {
   "name": "@felixicaza/astro-capo",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "🔷🚀 The most accurate and modern `<head>` sorting in Astro!",
   "keywords": [
     "astro",
