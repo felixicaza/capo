@@ -10,11 +10,13 @@ The most accurate and modern `<head>` sorting in Astro!
 
 Forked from [natemoo-re/astro-capo][natemoo-re/astro-capo].
 
-###### Changes made in this fork:
+##### Changes made in this fork:
 - 🖥️ Changed package name to [`@felixicaza/astro-capo`][package] to publish under my npm scope.
 - 🧩 Make tag detection and sorting more comprehensive and accurate. (See [issue #1](https://github.com/felixicaza/capo/issues/1))
 - ⚠️ Updated order of `preload` tags to be higher priority and avoid CLS issues (see [why? section](#-why)).
 - 🧪 Added unit and fixtures tests.
+
+_Now rules related changes are in [`capo-rules`][capo-rules]._
 
 ---
 
@@ -77,6 +79,8 @@ import { Head } from '@felixicaza/astro-capo'
 ## 💡 Why?
 The previous order placed the `preload` tags very low, which caused some resources to be preloaded too late, for example, when there were `@font-face` declarations in inline `style` tags, resulting in Cumulative Layout Shift (CLS) issues. (See commit test [`ada71429`](https://github.com/felixicaza/capo/blob/ada71429a83d5d128d463196eb7d2047b2ed67af/tests/fixtures/base/dist/index.html) and `capo.js` [issue #113](https://github.com/rviscomi/capo.js/issues/113)).
 
+_Now rules related changes are in [`capo-rules`][capo-rules]._
+
 > [!NOTE]
 > This change is opinionated and actually is under investigation. If you have any insights on this, please share them in the [issues tab](https://github.com/felixicaza/capo/issues).
 
@@ -97,3 +101,4 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 [natemoo-re/astro-capo]: https://github.com/natemoo-re/astro-capo
 [Rick Viscomi]: https://bsky.app/profile/rviscomi.dev
 [capo.js]: https://rviscomi.github.io/capo.js
+[capo-rules]: https://github.com/felixicaza/capo/tree/main/packages/capo-rules
