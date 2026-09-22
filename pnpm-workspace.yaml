@@ -3,7 +3,7 @@ blockExoticSubdeps: true
 autoInstallPeers: false
 minimumReleaseAge: 2880
 trustPolicy: no-downgrade
-strictPeerDependencies: false # TODO: Enable
+strictPeerDependencies: true
 strictDepBuilds: true
 dedupePeers: true
 shellEmulator: true
@@ -15,11 +15,8 @@ packages:
 
 minimumReleaseAgeExclude:
    - capo-rules
-
-packageExtensions:
-   "oxlint-plugin-complexity@*":
-      dependencies:
-         "@oxlint/plugins": "*"
+   - "@felixicaza/eslint-config"
+   - "@felixicaza/oxlint-config"
 
 allowBuilds:
    esbuild: true

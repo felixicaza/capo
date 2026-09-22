@@ -1,9 +1,3 @@
 import { felixicaza } from '@felixicaza/oxlint-config'
 
-export default felixicaza({},
-  [
-    {
-      ignorePatterns: ['**/.astro']
-    }
-  ]
-)
+export default felixicaza()
