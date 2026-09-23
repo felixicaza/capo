@@ -41,10 +41,10 @@
     "dev": "tsdown --watch"
   },
   "dependencies": {
-    "capo-rules": "0.0.1"
+    "capo-rules": "0.0.2"
   },
   "devDependencies": {
-    "astro": "6.3.3"
+    "astro": "7.3.3"
   },
   "peerDependencies": {
     "astro": ">=3.6.0"
