@@ -1,18 +1,18 @@
 version: 2
 updates:
-   - package-ecosystem: "github-actions"
-     directory: "/"
+   - package-ecosystem: github-actions
+     directory: /
      schedule:
-        interval: "monthly"
-        day: "saturday"
+        interval: monthly
+        day: saturday
         time: "00:00"
-        timezone: "America/Costa_Rica"
-     target-branch: "main"
+        timezone: America/Costa_Rica
+     target-branch: main
      labels:
-        - "actions"
+        - actions
      groups:
         dependencies:
            patterns:
               - "*"
            update-types:
-              - "major"
+              - major

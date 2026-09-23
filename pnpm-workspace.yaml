@@ -24,6 +24,6 @@ allowBuilds:
    simple-git-hooks: true
 
 trustPolicyExclude:
-   - "semver@6.3.1"
-   - "tinyexec@1.2.2"
-   - "tinyclip@0.1.13"
+   - semver@6.3.1
+   - tinyexec@1.2.2
+   - tinyclip@0.1.13

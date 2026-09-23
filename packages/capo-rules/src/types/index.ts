@@ -1,6 +1,7 @@
 import type { ElementNode } from 'ultrahtml'
 
 function enumObject<T extends string>(...values: T[]) {
+  // SAFETY: Each input value is used as both the entry key and value, so every K in T maps to K
   return Object.fromEntries(values.map((value) => [value, value])) as {
     readonly [K in T]: K
   }

@@ -1,8 +1,12 @@
 import type { ElementNode } from 'ultrahtml'
 import type { Attributes } from '../types/index.ts'
 
+import { TEXT_NODE } from 'ultrahtml'
+
 import { TAGS_ATTRIBUTES } from '../constants/attributes.ts'
 import { BLOCKING_KEYWORD } from '../constants/keywords.ts'
+
+const WHITESPACE_REGEX = /\s+/
 
 export function attrLower(attributes: Attributes, key: string): string {
   return (attributes[key] ?? '').toLowerCase()
@@ -16,7 +20,7 @@ export function hasRel(attributes: Attributes, expectedToken: string): boolean {
   const rel = attrLower(attributes, TAGS_ATTRIBUTES.Rel)
   if (!rel) return false
 
-  const tokens = rel.split(/\s+/).filter(Boolean)
+  const tokens = rel.split(WHITESPACE_REGEX).filter(Boolean)
   return tokens.includes(expectedToken)
 }
 
@@ -40,9 +44,8 @@ export function getElementText(element: ElementNode): string {
   let text = ''
 
   for (const child of element.children) {
-    const childValue = (child as { value?: unknown }).value
-    if (typeof childValue === 'string') {
-      text += childValue
+    if (child.type === TEXT_NODE) {
+      text += child.value
     }
   }
 

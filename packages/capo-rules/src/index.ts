@@ -8,6 +8,7 @@ export function capo(html: string): string {
   const ast = parse(html)
 
   try {
+    // oxlint-disable-next-line node/no-sync
     walkSync(ast, (node, parent, index) => {
       if (node.type !== ELEMENT_NODE || node.name !== TAGS.Head) return
       if (!parent) return
@@ -21,5 +22,6 @@ export function capo(html: string): string {
     }
   }
 
+  // oxlint-disable-next-line node/no-sync
   return renderSync(ast)
 }

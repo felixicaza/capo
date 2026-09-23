@@ -6,24 +6,29 @@ import { createComponent, renderSlot, spreadAttributes, unescapeHTML } from 'ast
 
 import { capo } from 'capo-rules'
 
+type RenderChunk = Parameters<typeof chunkToString>[1]
+
 export const Head = createComponent({
   // @ts-expect-error using astro internals
+  // Astro's internal createComponent factory is typed with Record<string, any>
+  // This is an intentional compatibility boundary with Astro's private SSR API
+  // oxlint-disable-next-line anti-slop/no-unsafe-dictionary-type
   factory: async(result: SSRResult, props: Record<string, any>, slots: Record<string, any>) => {
     let head = ''
     head += `<head${spreadAttributes(props)} data-capo>`
 
     // Render slot chunks through Astro's chunk serializer so internal
-    // render instructions (like view-transitions script injection) are preserved.
+    // render instructions (like view-transitions script injection) are preserved
     const destination = {
-      write(chunk: unknown) {
+      write(chunk: RenderChunk) {
         if (chunk instanceof Response) return
-        head += chunkToString(result, chunk as any)
+        head += chunkToString(result, chunk)
       }
     }
 
     await renderSlot(result, slots.default).render(destination)
 
-    // Keep Astro-managed head content (styles/links/scripts) in sync.
+    // Keep Astro-managed head content (styles/links/scripts) in sync
     head += chunkToString(result, renderAllHeadContent(result))
     head += '</head>'
 
